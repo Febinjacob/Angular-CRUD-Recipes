@@ -1,0 +1,56 @@
+<!-- {{contact|json}} -->
+<div class="container">
+    <div class="row">
+        <h1 class="text-center my-3">Update Details</h1>
+        <div class="col-6">
+            <!-- form -->
+            <form>
+                <!-- full name -->
+                <div class="form-floating my-3">
+                    <input [(ngModel)]="contact.name" name="contactname" type="text" class="form-control" id="floatingInput" placeholder="Full name">
+                    <label for="floatingInput">Name</label>
+                </div>
+                <!-- photo url   -->
+                <div class="form-floating mb-3">
+                    <input [(ngModel)]="contact.photourl"  name="photourl" type="text" class="form-control" id="floatingphoto" placeholder="Photo Url">
+                    <label for="floatingPhotourl">Photo Url</label>
+                </div>
+
+                <!-- email -->
+                <div class="form-floating mb-3">
+                    <input [(ngModel)]="contact.foodrecipe"  name="foodrecipe" type="text" class="form-control" id="floatingphoto" placeholder="Photo Url">
+                    <label for="floatingPhotourl">Food Recipe</label>
+                </div>
+
+                <!-- Mobile -->
+                <div class="form-floating mb-3">
+                    <input [(ngModel)]="contact.chefs"  name="chefs" type="text" class="form-control" id="floatingMobile" placeholder="Mobile">
+                    <label for="floatingMobile">Chefs</label>
+                </div>
+
+                <!-- group -->
+                <div class="mb-3 form-floating">
+                    <select [(ngModel)]="contact.GroupId"  name="groupid" class="form-control">
+                        <option value="" selected hidden disabled>Select</option>
+                        <option [value]="grp.id" *ngFor="let grp of groups" >{{grp.name}}</option>
+            
+                    </select>
+                </div>
+                <!-- Button -->
+
+                <div class="text-center">
+                    <input (click)="updateRecipes()" type="button" value="submit" class="btn btn-outline-danger my-3">
+
+                </div>
+
+            </form>
+        </div>
+        <div class="col-6 m-3 card-img-top" style="width:450px; height:355px">
+            <!-- image -->
+            <img style="width: 100%;height:100%" [src]="contact.photourl"
+                alt="">
+
+        </div>
+
+    </div>
+</div>

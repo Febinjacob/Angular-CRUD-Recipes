@@ -1,0 +1,62 @@
+<!-- {{recipes |json}} -->
+<div class="container">
+    <div class="row">
+        <h1 class="text-center my-3">Add Details</h1>
+        <div class="col-6">
+            <!-- form -->
+            <form>
+                <!-- full name -->
+                <div class="form-floating my-3">
+                    <input [(ngModel)]="recipes.id" name="id" type="text" class="form-control" id="floatingInput" placeholder="ID">
+                    <label for="floatingInput12">ID</label>
+                </div>
+
+                <!-- full name -->
+                <div class="form-floating my-3">
+                    <input [(ngModel)]="recipes.name" name="name" type="text" class="form-control" id="floatingInput" placeholder="Full name">
+                    <label for="floatingInput1">Name</label>
+                </div>
+                <!-- photo url   -->
+                <div class="form-floating mb-3">
+                    <input [(ngModel)]="recipes.photourl" name="photourl" type="text" class="form-control" id="floatingphoto" placeholder="Photo Url">
+                    <label for="floatingPhotourl">Photo Url</label>
+                </div>
+
+                <!-- email -->
+                <div class="form-floating mb-3">
+                    <input [(ngModel)]="recipes.foodrecipe" name="foodrecipe" type="text" class="form-control" id="floatingphoto" placeholder="Photo Url">
+                    <label for="floatingPhotourl">Food Recipes</label>
+                </div>
+
+                <!-- Mobile -->
+                <div class="form-floating mb-3">
+                    <input [(ngModel)]="recipes.chefs" name="chefs" type="text" class="form-control" id="floatingMobile" placeholder="Mobile">
+                    <label for="floatingMobile">Chefs</label>
+                </div>
+
+                <!-- group -->
+                <div class="mb-3 form-floating">
+                    <select [(ngModel)]="recipes.GroupId" name="GroupId" class="form-control">
+                        <option selected hidden disabled>{{recipes.GroupId}}</option>
+                        <option [value]="group.id" *ngFor="let group of allGroups">{{group.name}}</option>
+
+                    </select>
+                </div>
+                <!-- Button -->
+
+                <div class="text-center">
+                    <input type="button"  (click)="addRecipes()" routerLink="/" value="submit" class="btn btn-outline-danger my-3">
+
+                </div>
+
+            </form>
+        </div>
+        <div class="col-6 m-4 card-img-top" style="width:450px; height:400px">
+            <!-- image -->
+            <img style="width: 100%;height:100%" src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxleHBsb3JlLWZlZWR8Nnx8fGVufDB8fHx8fA%3D%3D&w=1000&q=80"
+                alt="">
+
+        </div>
+
+    </div>
+</div>

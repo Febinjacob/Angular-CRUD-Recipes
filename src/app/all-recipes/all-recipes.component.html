@@ -1,0 +1,55 @@
+<div class="container">
+   <div class="row">
+      <div class="col text-center">
+         <h1 class="my-3">Allrecipes</h1>
+         <p style="text-align: justify;">Taking the top position is Allrecipes, a top-tier recipe website that is
+            estimated to have over 25 million
+            visitors each month. With an easy to navigate site and the backing of skilled and experienced culinary
+            masters, it furnishes its visitors with thousands of delicious recipes and meal preparation videos. It also
+            features comprehensive how-to-do guides on every food-related topic. The site also permits users to create
+            profiles and share their recipes with others.</p>
+
+      </div>
+
+   </div>
+   <div class="row">
+      <div class="col d-flex justify-content-between">
+         <!-- search -->
+         <div>
+            <input (keyup)="search($event)" type="text" placeholder="Search Recipes" class="form-control">
+         </div>
+         <button class="btn btn-outline-danger" routerLink="/all-recipes/add-recipes">Add Recipes</button>
+
+      </div>
+
+   </div>
+   <!-- {{allRecipes|json}} -->
+   <div class="row" style="padding-top:20px; padding-bottom:20px">
+      <div class="col-3" *ngFor="let recipes of allRecipes |filter:searchKey:'name'">
+         <div class="card my-3">
+            <!-- image -->
+            <img class="card-img-top" width="290px" height="250px" [src]="recipes.photourl" alt="">
+            <ul class="list-group list-group-flush">
+               <li class="list-group-item"> {{recipes.name}}</li>
+               <li class="list-group-item">{{recipes.chefs}}</li>
+            </ul>
+            <div class="d-flex justify-content-around mb-3 m-2">
+               <!-- view -->
+               <a routerLink="/all-recipes/view/{{recipes.id}}">
+                  <button class="btn btn-danger">View</button>
+               </a>
+               <!-- edit -->
+               <a routerLink="/all-recipes/edit/{{recipes.id}}">
+                  <button class="btn btn-danger">Add More</button>
+               </a>
+               <!-- delete -->
+               <a routerLink="">
+                  <button (click)="deleteRecipes(recipes.id)" class="btn btn-danger">Delete</button>
+               </a>
+            </div>
+
+         </div>
+
+      </div>
+
+   </div>
